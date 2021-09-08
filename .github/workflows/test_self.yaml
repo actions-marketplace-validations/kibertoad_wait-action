@@ -1,0 +1,30 @@
+---
+name: test_self
+
+on:
+  push:
+    paths:
+      - "action.yml"
+      - "action.yaml"
+      - "Dockerfile"
+      - "entrypoint.sh"
+      - ".github/workflows/test_self.yaml"
+  pull_request:
+    paths:
+      - "action.yml"
+      - "action.yaml"
+      - "Dockerfile"
+      - "entrypoint.sh"
+      - ".github/workflows/test_self.yaml"
+
+jobs:
+  test_self:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out self repo
+        uses: actions/checkout@v2
+      - name: test self - latest
+        # this will run the `action.yml` in repo root
+        uses: ./
+        with:
+          time: '1s'

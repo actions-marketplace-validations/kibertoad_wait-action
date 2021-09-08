@@ -1,3 +1,4 @@
+---
 name: 'Sleep to wait'
 description: 'Sleep for a specified amount of time (10s, 2m, etc.)'
 author: 'Igor Savin <kibertoad@gmail.com>'
@@ -6,7 +7,8 @@ branding:
   color: purple
 inputs:
   time:
-    description: 'Follows the Linux sleep syntax for time units: a number followed by s for seconds, m for minutes, etc'
+    description: 'Follows the Linux sleep syntax for time units:
+      a number followed by s for seconds, m for minutes, etc'
     required: true
 runs:
   using: 'docker'
